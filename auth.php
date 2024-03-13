@@ -1,4 +1,8 @@
 <?php
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
+header('Access-Control-Allow-Headers: Content-Type');
+header('Access-Control-Allow-Origin: *');
+
 
 // Fungsi untuk mengirim response dalam format JSON
 function kirimResponse($sukses, $status, $pesan, $data = null) {
@@ -114,14 +118,16 @@ function loginUser($koneksi, $username, $password) {
             $response = [
                 'sukses' => false,
                 'status' => 401,
-                'pesan' => 'Login gagal, username atau password salah'
+                'pesan' => 'Login gagal, username atau password salah',
+                'data'=> null
             ];
         }
     } else {
         $response = [
             'sukses' => false,
             'status' => 401,
-            'pesan' => 'Login gagal, username atau password salah'
+            'pesan' => 'Login gagal, username atau password salah',
+            'data'=> null
         ];
     }
 

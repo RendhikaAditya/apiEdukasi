@@ -1,6 +1,10 @@
 <?php
 
 include 'koneksi.php';
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
+header('Access-Control-Allow-Headers: Content-Type');
+header('Access-Control-Allow-Origin: *');
+
 
 // Fungsi untuk membaca data dari tabel berita
 function bacaDataBerita() {
