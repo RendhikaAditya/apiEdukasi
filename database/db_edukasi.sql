@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Waktu pembuatan: 11 Mar 2024 pada 07.04
--- Versi server: 10.4.32-MariaDB
--- Versi PHP: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: Mar 13, 2024 at 08:16 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_berita`
+-- Table structure for table `tb_berita`
 --
 
 CREATE TABLE `tb_berita` (
@@ -35,7 +35,7 @@ CREATE TABLE `tb_berita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_berita`
+-- Dumping data for table `tb_berita`
 --
 
 INSERT INTO `tb_berita` (`id_berita`, `judul_berita`, `konten_berita`, `gambar_berita`) VALUES
@@ -53,7 +53,7 @@ INSERT INTO `tb_berita` (`id_berita`, `judul_berita`, `konten_berita`, `gambar_b
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_galeri`
+-- Table structure for table `tb_galeri`
 --
 
 CREATE TABLE `tb_galeri` (
@@ -62,34 +62,34 @@ CREATE TABLE `tb_galeri` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_galeri`
+-- Dumping data for table `tb_galeri`
 --
 
 INSERT INTO `tb_galeri` (`id_galeri`, `foto`) VALUES
 (1, '1.jpg'),
-(2, '2.png'),
+(2, '2.jpg'),
 (3, '3.jpg'),
-(4, '4.png'),
+(4, '4.jpg'),
 (5, '5.jpg'),
-(6, '6.png'),
+(6, '6.jpg'),
 (7, '7.jpg'),
-(8, '8.png'),
+(8, '8.jpg'),
 (9, '9.jpg'),
-(10, '10.png'),
+(10, '10.jpg'),
 (11, '11.jpg'),
-(12, '12.png'),
+(12, '12.jpg'),
 (13, '13.jpg'),
-(14, '14.png'),
+(14, '14.jpg'),
 (15, '15.jpg'),
-(16, '16.png'),
+(16, '16.jpg'),
 (17, '17.jpg'),
-(18, '18.png'),
+(18, '18.jpg'),
 (19, '19.jpg'),
-(20, '20.png'),
+(20, '20.jpg'),
 (21, '1.jpg'),
-(22, '2.png'),
+(22, '2.jpg'),
 (23, '3.jpg'),
-(24, '4.png'),
+(24, '4.jpg'),
 (25, '5.jpg'),
 (26, '6.png'),
 (27, '7.jpg'),
@@ -110,11 +110,12 @@ INSERT INTO `tb_galeri` (`id_galeri`, `foto`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pegawai`
+-- Table structure for table `tb_pegawai`
 --
 
 CREATE TABLE `tb_pegawai` (
   `id_pegawai` int(11) NOT NULL,
+  `nama` varchar(50) DEFAULT NULL,
   `no_bp` varchar(20) DEFAULT NULL,
   `no_hp` varchar(15) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
@@ -122,35 +123,35 @@ CREATE TABLE `tb_pegawai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_pegawai`
+-- Dumping data for table `tb_pegawai`
 --
 
-INSERT INTO `tb_pegawai` (`id_pegawai`, `no_bp`, `no_hp`, `email`, `created_date`) VALUES
-(1, 'BP001', '081234567890', 'aguswibowo@example.com', '2024-03-11 10:02:51'),
-(2, 'BP002', '082345678901', 'nurulfitriani@example.com', '2024-03-11 10:02:51'),
-(3, 'BP003', '083456789012', 'andreasputra@example.com', '2024-03-11 10:02:51'),
-(4, 'BP004', '084567890123', 'novitawidjaja@example.com', '2024-03-11 10:02:51'),
-(5, 'BP005', '085678901234', 'dewifitriani@example.com', '2024-03-11 10:02:51'),
-(6, 'BP006', '086789012345', 'rendyprasetyo@example.com', '2024-03-11 10:02:51'),
-(7, 'BP007', '087890123456', 'sitisofia@example.com', '2024-03-11 10:02:51'),
-(8, 'BP008', '088901234567', 'budiwijaya@example.com', '2024-03-11 10:02:51'),
-(9, 'BP009', '089012345678', 'indahlestari@example.com', '2024-03-11 10:02:51'),
-(10, 'BP010', '081123456789', 'rahmawanagus@example.com', '2024-03-11 10:02:51'),
-(11, 'BP011', '082234567890', 'tiahandayani@example.com', '2024-03-11 10:02:51'),
-(12, 'BP012', '083345678901', 'muhajirriza@example.com', '2024-03-11 10:02:51'),
-(13, 'BP013', '084456789012', 'deviafriani@example.com', '2024-03-11 10:02:51'),
-(14, 'BP014', '085567890123', 'antonwijaya@example.com', '2024-03-11 10:02:51'),
-(15, 'BP015', '086678901234', 'aisyahnur@example.com', '2024-03-11 10:02:51'),
-(16, 'BP016', '087789012345', 'nandasaputra@example.com', '2024-03-11 10:02:51'),
-(17, 'BP017', '088890123456', 'suliswanto@example.com', '2024-03-11 10:02:51'),
-(18, 'BP018', '089901234567', 'sariayu@example.com', '2024-03-11 10:02:51'),
-(19, 'BP019', '081012345678', 'wulandari@example.com', '2024-03-11 10:02:51'),
-(20, 'BP020', '081112345678', 'anggunita@example.com', '2024-03-11 10:02:51');
+INSERT INTO `tb_pegawai` (`id_pegawai`, `nama`, `no_bp`, `no_hp`, `email`, `created_date`) VALUES
+(1, 'Agus Wibowo', 'BP001', '081234567890', 'aguswibowo@example.com', '2024-03-11 10:02:51'),
+(2, 'Nurulfitriani', 'BP002', '082345678901', 'nurulfitriani@example.com', '2024-03-11 10:02:51'),
+(3, 'Andreasputra', 'BP003', '083456789012', 'andreasputra@example.com', '2024-03-11 10:02:51'),
+(4, 'Novitawidjaja', 'BP004', '084567890123', 'novitawidjaja@example.com', '2024-03-11 10:02:51'),
+(5, 'Dewifitriani', 'BP005', '085678901234', 'dewifitriani@example.com', '2024-03-11 10:02:51'),
+(6, 'Rendyprasetyo', 'BP006', '086789012345', 'rendyprasetyo@example.com', '2024-03-11 10:02:51'),
+(7, 'Sitisofia', 'BP007', '087890123456', 'sitisofia@example.com', '2024-03-11 10:02:51'),
+(8, 'Budiwijaya', 'BP008', '088901234567', 'budiwijaya@example.com', '2024-03-11 10:02:51'),
+(9, 'Indahlestari', 'BP009', '089012345678', 'indahlestari@example.com', '2024-03-11 10:02:51'),
+(10, 'Rahmawanagus', 'BP010', '081123456789', 'rahmawanagus@example.com', '2024-03-11 10:02:51'),
+(11, 'Tia Handayani', 'BP011', '082234567890', 'tiahandayani@example.com', '2024-03-11 10:02:51'),
+(12, 'Muhajirriza', 'BP012', '083345678901', 'muhajirriza@example.com', '2024-03-11 10:02:51'),
+(13, 'Deviafriani', 'BP013', '084456789012', 'deviafriani@example.com', '2024-03-11 10:02:51'),
+(14, 'Antonwijaya', 'BP014', '085567890123', 'antonwijaya@example.com', '2024-03-11 10:02:51'),
+(15, 'Aisyahnur', 'BP015', '086678901234', 'aisyahnur@example.com', '2024-03-11 10:02:51'),
+(16, 'Nandasaputra', 'BP016', '087789012345', 'nandasaputra@example.com', '2024-03-11 10:02:51'),
+(17, 'Suliswanto', 'BP017', '088890123456', 'suliswanto@example.com', '2024-03-11 10:02:51'),
+(18, 'Sariayu', 'BP018', '089901234567', 'sariayu@example.com', '2024-03-11 10:02:51'),
+(19, 'Wulandari', 'BP019', '081012345678', 'wulandari@example.com', '2024-03-11 10:02:51'),
+(20, 'Anggunita', 'BP020', '081112345678', 'anggunita@example.com', '2024-03-11 10:02:51');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_user`
+-- Table structure for table `tb_user`
 --
 
 CREATE TABLE `tb_user` (
@@ -163,7 +164,7 @@ CREATE TABLE `tb_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_user`
+-- Dumping data for table `tb_user`
 --
 
 INSERT INTO `tb_user` (`id_user`, `nama_user`, `alamat_user`, `nohp_user`, `username`, `password`) VALUES
@@ -172,64 +173,65 @@ INSERT INTO `tb_user` (`id_user`, `nama_user`, `alamat_user`, `nohp_user`, `user
 (3, 'Ahmad Abdullah', 'Jl. Gatot Subroto No. 789', '083456789012', 'ahmad.abdullah', '$2y$10$ybI9aKXxK0CBpC1g6hWx9ugaYOuEQtHxpr1rTHh7Uy48xASLsmk0i'),
 (4, 'Siti Rahayu', 'Jl. Asia Afrika No. 321', '084567890123', 'siti.rahayu', '$2y$10$ybI9aKXxK0CBpC1g6hWx9ugaYOuEQtHxpr1rTHh7Uy48xASLsmk0i'),
 (5, 'Budi Santoso', 'Jl. Diponegoro No. 555', '085678901234', 'budi.santoso', '$2y$10$ybI9aKXxK0CBpC1g6hWx9ugaYOuEQtHxpr1rTHh7Uy48xASLsmk0i'),
-(6, 'Rendhika aditya', 'padng', '082112211', 'aditya', '$2y$10$oc/6YP80X7gtsXp3AwKSRugIhtHkFrt.mbp4R8cb9lP57LZt9Zl2C');
+(6, 'Rendhika aditya', 'padng', '082112211', 'aditya', '$2y$10$oc/6YP80X7gtsXp3AwKSRugIhtHkFrt.mbp4R8cb9lP57LZt9Zl2C'),
+(7, 'Yulianti', 'pekanbaru', '081266673375', 'yuli', '$2y$10$jwRKIsXcG5r4ibXxKaJVFulOQW1Rxo2khTMF0cit4uEPbf6/8JorW');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `tb_berita`
+-- Indexes for table `tb_berita`
 --
 ALTER TABLE `tb_berita`
   ADD PRIMARY KEY (`id_berita`);
 
 --
--- Indeks untuk tabel `tb_galeri`
+-- Indexes for table `tb_galeri`
 --
 ALTER TABLE `tb_galeri`
   ADD PRIMARY KEY (`id_galeri`);
 
 --
--- Indeks untuk tabel `tb_pegawai`
+-- Indexes for table `tb_pegawai`
 --
 ALTER TABLE `tb_pegawai`
   ADD PRIMARY KEY (`id_pegawai`),
   ADD UNIQUE KEY `no_bp` (`no_bp`);
 
 --
--- Indeks untuk tabel `tb_user`
+-- Indexes for table `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tb_berita`
+-- AUTO_INCREMENT for table `tb_berita`
 --
 ALTER TABLE `tb_berita`
   MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_galeri`
+-- AUTO_INCREMENT for table `tb_galeri`
 --
 ALTER TABLE `tb_galeri`
   MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pegawai`
+-- AUTO_INCREMENT for table `tb_pegawai`
 --
 ALTER TABLE `tb_pegawai`
   MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_user`
+-- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
