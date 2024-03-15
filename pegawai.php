@@ -1,6 +1,10 @@
 <?php
 // include file koneksi.php
 include 'koneksi.php';
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
+header('Access-Control-Allow-Headers: Content-Type');
+header('Access-Control-Allow-Origin: *');
+
 
 // Fungsi Create (Tambah Data)
 function tambahData($data) {

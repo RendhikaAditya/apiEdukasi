@@ -133,11 +133,17 @@ function loginUser($koneksi, $username, $password) {
 
     return json_encode($response);
 }
-
 // Fungsi editUser
 function editUser($koneksi, $id_user, $nama_user, $alamat_user, $nohp_user, $username, $password) {
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-    $query = "UPDATE tb_user SET nama_user='$nama_user', alamat_user='$alamat_user', nohp_user='$nohp_user', username='$username', password='$hashed_password' WHERE id_user=$id_user";
+    // Periksa apakah password baru kosong
+    if (!empty($password)) {
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $query = "UPDATE tb_user SET nama_user='$nama_user', alamat_user='$alamat_user', nohp_user='$nohp_user', username='$username', password='$hashed_password' WHERE id_user=$id_user";
+    } else {
+        // Jika password kosong, gunakan password lama
+        $query = "UPDATE tb_user SET nama_user='$nama_user', alamat_user='$alamat_user', nohp_user='$nohp_user', username='$username' WHERE id_user=$id_user";
+    }
+
     $result = mysqli_query($koneksi, $query);
 
     if ($result) {
@@ -156,5 +162,6 @@ function editUser($koneksi, $id_user, $nama_user, $alamat_user, $nohp_user, $use
 
     return json_encode($response);
 }
+
 
 ?>
